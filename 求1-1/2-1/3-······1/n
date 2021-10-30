@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()
+{
+	int n;
+	float y = 1;
+	scanf("%d", &n);
+	for (int dom = 2; dom <= n; dom++)
+	{
+		y = y - (1.0 / dom);
+	}
+	printf("%.2f", y);
+	return 0;
+}
