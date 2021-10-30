@@ -1,0 +1,19 @@
+3、#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int n,b=0;
+	scanf("%d", &n);
+	for (int a = 101; a <= n; a+=2)
+	{
+		int i = 2;
+		for (; i <= (int)sqrt((double)a); i++)
+		{
+			if (a % i == 0)
+				break;
+		}
+		if (i > (int)sqrt((double)a))b++;
+	}
+	printf("%d", b);
+	return 0;
+}
