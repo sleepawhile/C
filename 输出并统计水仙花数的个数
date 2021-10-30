@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int n, count=0;
+	scanf("%d", &n);
+	for (int a = 100; a <= n; a++)
+	{
+		int b, s, g;
+		b = a / 100;
+		s = (a - 100 * b) / 10;
+		g = (a - 100 * b - 10 * s);
+		if (pow((double)b, 3.0) + pow((double)s, 3.0) + pow((double)g, 3.0) == a)
+		{
+			printf("%d\n", a);
+			count++;
+		}
+	}
+	printf("%d", count);
+	return 0;
+}
