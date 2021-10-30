@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+	int n,b=0,c=0,m;
+	scanf("%d%d", &n,&m);
+	for (int a = 1; a <= n; a++)
+	{
+		if (a % m== 0)
+		{
+			b = a;
+			c = c + b;
+		}
+	}
+	printf("%d", c);
+	return 0;
+}
