@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	for (int a = 1; a <= n; a++)
+	{
+		int c=0;
+		for (int b = 1; b <= a/2; b++)
+		{
+			if (a % b == 0)
+			{
+				c = c + b;
+			 }
+		}
+		if (c == a)printf("%d\n", a);
+	}
+	return 0;
+}
