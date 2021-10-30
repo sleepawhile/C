@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int n, m, b1 = 0 ;
+	float b3 = 0;
+	double b4 = 0,b2 = 0;
+	scanf("%d%d", &m, &n);
+	for (int k = 1; k <= m; k++)
+	{
+		b1 = k + b1;
+	}
+	for (double k = 1.0; k <= m; k++)
+	{
+		b2 = pow(k,2.0) + b2;
+	}
+	for (int k = 1; k <= n; k++)
+	{
+		b3 = 1.0 / k + b3;
+	}
+	for (double k = 1.0; k <= n; k++)
+	{
+		b4 = 1.0 / pow(k, 2.0) + b4;
+	}
+	printf("%.2lf", b3 + b4 + b1 + b2);
+	return 0;
+}
