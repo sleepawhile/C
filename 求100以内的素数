@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int a[100];
+	for (int i = 0; i < 100; i++)
+	{
+		a[i] = i+1;
+	}
+	for (int i = 1; i < 100; i++)
+	{
+		int j = 2;
+		for (;j <= sqrt((double)a[i]);j++)
+		{
+			if (a[i] % j == 0)break;
+		}
+		if (j > sqrt((double)a[i]))printf("%d ", a[i]);
+	}
+	return 0;
+}
