@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main()
+{
+	int arr[10], count = 0, sum = 0;
+	float avg;
+	for (int i = 0; i < 10; i++)
+	{
+		scanf("%d", &arr[i]);
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		if (arr[i] >= 0)
+		{
+			sum = sum + arr[i];
+			count++;
+		}
+	}
+	avg = (float)sum / count;
+	printf("%.2f", avg);
+	return 0;
+}
