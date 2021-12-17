@@ -1,0 +1,29 @@
+#include<stdio.h>
+struct
+{
+	int year;
+	int month;
+	int day;
+}Date;
+int main()
+{
+	int a = 0;
+	printf("输入年月日:");
+	scanf("%d%d%d", &Date.year, &Date.month, &Date.day);
+	for (int i = 1; i < Date.month; i++)
+	{
+		if (i % 2 != 0)a += 30;
+		else a += 31;
+	}
+	if (Date.year % 4 == 0 && Date.year % 100 != 0 || Date.year % 400 == 0)
+	{
+		if (Date.month <= 7&&Date.month>1)a=a - 1;
+	}
+	else
+	{
+		if (Date.month <= 7&&Date.month>1)a = a - 2;
+		else if(Date.month>7)a = a - 1;
+	}
+	printf("%d", a + Date.day);
+	return 0;
+}
