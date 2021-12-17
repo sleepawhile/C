@@ -1,0 +1,33 @@
+#include<stdio.h>
+struct Student
+{
+	int num;
+	char name[20];
+	float score[3];
+}student[5];
+void input()
+{
+	for (int i = 0; i < 5; i++)
+	{
+		scanf("%d%s", &student[i].num, &student[i].name);
+		for (int j = 0; j < 3; j++)
+			scanf("%f", &student[i].score[j]);
+	
+	}
+}
+void print()
+{
+	for (int i = 0; i < 5; i++)
+	{
+		printf("%d       %s       ", student[i].num, student[i].name);
+		for (int j = 0; j < 3; j++)
+			printf("%.2f   ", student[i].score[j]);
+		printf("\n");
+	}
+}
+int main()
+{
+	input();
+	print();
+	return 0;
+}
