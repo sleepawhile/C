@@ -1,0 +1,81 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define F sizeof(struct student)
+struct student
+{
+	int num;
+	float score;
+	struct student* next;
+};
+struct student* creat()
+{
+	int n = 0;
+	struct student* p1, * p2, *head=NULL;
+	p1 = p2 = (struct student*)malloc(F);
+	scanf("%d%f", &p1->num, &p1->score);
+	while (p1->num != 0)
+	{
+		n += 1;
+		if(n==1)head = p1;
+		else p2->next = p1;
+		p2 = p1;
+		p1 = (struct student*)malloc(F);
+		scanf("%d%f", &p1->num, &p1->score);
+	}
+	p2->next = NULL;
+	return (head);
+}
+struct student* link(struct student*p1,struct student*p2)
+{
+	struct student* head = p1;
+	while (p1->next != NULL)
+	{
+		p1 = p1->next;
+	}
+	p1->next = p2;
+	return (head);
+}
+struct student* sort(struct student* p1)
+{
+	
+	
+	student* p3, *a;
+	p3 = p1;
+	while (p3->next!= NULL)
+	{
+		a = p3->next;
+		while(a!=NULL)
+		{
+			if (p3->num > a->num)
+			{
+				int num = p3->num;
+				p3->num = a->num;
+				a->num =num;
+				float score = p3->score;
+				p3->score = a->score;
+				a->score = score;
+			}
+			a = a->next;
+		}
+		p3 = p3->next;
+	}
+	return(p1);
+}
+void print(struct student* p1)
+{
+	struct student* pr = p1;
+	if(p1->next!=NULL)
+		do
+		{
+		printf("%d %.2f\n", pr->num, pr->score);
+		pr = pr->next;
+		} while (pr!= NULL);
+}
+int main()
+{
+	struct student* pt1, * pt2;
+	pt1=creat();
+	pt2=creat();
+	print(sort(link(pt1, pt2)));
+	return 0;
+}
